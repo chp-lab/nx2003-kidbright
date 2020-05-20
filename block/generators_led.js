@@ -1,6 +1,6 @@
 module.exports = function(Blockly){
 	'use strict';
-	Blockly.JavaScript['led_blink'] = function(block) {
+	Blockly.JavaScript['led'] = function(block) {
 		var delay = block.getFieldValue('delay');
 		var code = `
 		#SETUP

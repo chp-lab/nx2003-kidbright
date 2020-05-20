@@ -1,6 +1,6 @@
 module.exports = function(Blockly){
 	'use strict';
-	Blockly.Blocks['led_blink'] = {
+	Blockly.Blocks['led'] = {
 		init: function() {
 			this.appendDummyInput()
 			.appendField("LED Blink with delay ")
