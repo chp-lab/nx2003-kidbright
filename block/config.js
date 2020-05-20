@@ -6,7 +6,7 @@ module.exports = {
 			icon: `file:///${dirIcon}/static/icon_menu.jpg`,
 			index: 0,
 			color: "230",
-			blocks:['led_blink']
+			blocks:['led']
 		}
 	]
 };
