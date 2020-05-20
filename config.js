@@ -1,12 +1,12 @@
 module.exports = {    
-    name : 'esp32-doit',
+    name : 'NX2003 Wrover',
     platform : 'arduino-esp32',
-    title : 'ESP32 DOIT DEVKIT V2',
-    description : 'ESP32-my Doit.\n',
-    author : 'Comdet Phueadphut',
-    website : 'https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-wrover-kit.html',
-    email : 'comdet.p@gmail.com',
-    git : 'https://github.com/comdet/esp32-doit/',
+    title : 'NX2003 With ESP32 Wrover-IB',
+    description : '16MB Flash 4 MB PSRAM.\n',
+    author : 'Chatpeth Kenanan',
+    website : 'https://www.espressif.com/sites/default/files/documentation/esp32-wrover-b_datasheet_en.pdf',
+    email : 'ch.ee.psu@outlook.com',
+    git : 'https://github.com/chp-lab/nx2003-kidbright/',
     image : '/static/display.jpg',
-    version : '1.1.0'
+    version : '1.0.0'
 };
