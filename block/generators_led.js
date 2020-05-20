@@ -4,7 +4,7 @@ module.exports = function(Blockly){
 		var delay = block.getFieldValue('delay');
 		var code = `
 		#SETUP
-		int led_pin = 22;
+		int led_pin = 13;
 		pinMode(led_pin, OUTPUT);
 		#END
 		digitalWrite(led_pin, HIGH);
