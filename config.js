@@ -1,5 +1,5 @@
 module.exports = {    
-    name : 'NX2003 Wrover',
+    name : 'nx2003-kidbright',
     platform : 'arduino-esp32',
     title : 'NX2003 With ESP32 Wrover-IB',
     description : '16MB Flash 4 MB PSRAM.\n',
