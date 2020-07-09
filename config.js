@@ -1,5 +1,5 @@
-module.exports = {    
-    name : 'nx2003-Wrover',
+module.exports = {
+    name : 'nx2003-wrover',
     platform : 'arduino-esp32',
     title : 'NX2003 With ESP32 Wrover-IB',
     description : '16MB Flash 4 MB PSRAM.\n',
@@ -7,6 +7,6 @@ module.exports = {
     website : 'https://www.espressif.com/sites/default/files/documentation/esp32-wrover-b_datasheet_en.pdf',
     email : 'ch.ee.psu@outlook.com',
     git : 'https://github.com/chp-lab/nx2003-kidbright/',
-    image : '/static/display.jpg',
+    image : '/static/board_NX2003.jpg',
     version : '1.0.0'
 };
