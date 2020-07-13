@@ -4,41 +4,31 @@
 #include <WiFiAP.h>
 #include <WebServer.h>
 
-#include <NX2003I2C.h>
+#include <NX2003Thermistor.h>
 
-NX2003I2C i2cOnBoard;
+int THERMISTOR_PIN = 39;
+  				#define VOLTAGE_INPUT 3.30
+  				#define NOMINAL_TEMP 25
+  				#define NOMINAL_RESISTANCE 100000
+  				#define REFERENCE_RESISTANCE 100000 // external RESISTANCE
+  				#define B_VALUE 3950
+  				#define ADC_RESOLUTION 4095
 
+
+  				NX2003Thermistor thermistor(THERMISTOR_PIN, VOLTAGE_INPUT, REFERENCE_RESISTANCE, NOMINAL_RESISTANCE, NOMINAL_TEMP, B_VALUE, ADC_RESOLUTION);
 
 
 
 void setup()
 {
-  i2cOnBoard.begin();
-
+  
   Serial.begin(115200);
 }
 void loop()
 {
-    			int nDevice = i2cOnBoard.scanI2CDevice();
-  			Serial.print("I2C connected !");
-  		Serial.println("----- List I2C Devices Address -----");
-  		if (nDevice == 0){
-  		  Serial.println("No I2C device is connected");
-  		} else {
-  		  for(byte address = 1; address < 127; address++){
-  			if(i2cOnBoard.hasDeviceAddress(address)){
-  			  Serial.print("- Address 0x");
-  			  if (address < 16) {
-  				Serial.print("0");
-  			  }
-  			  Serial.println(address, HEX);
-  			}
-  		  }
-  		}
-  		Serial.println((
-    			nDevice
-  		));
-  delay(5000);
+    Serial.println(
+  			thermistor.readTemperatureCelsius()
+  		);
 
   
 }

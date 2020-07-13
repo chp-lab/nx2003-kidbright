@@ -1,45 +1,40 @@
 const dirIcon = Vue.prototype.$global.board.board_info.dir;
+let spi_sdcard = require("./menu/config.group.spi_sdcard");
+
 module.exports = {
 	blocks : [
 		{
 			name: 'LED Blink',
-			icon: `file:///${dirIcon}/static/led-icon.png`,
+			icon: `file:///${dirIcon}/static/icons/led-icon.png`,
 			index: 0,
 			color: "230",
-			blocks:['led']
+			blocks:['led_blink']
 		},
 		{
 			name: 'Button',
-			icon: `file:///${dirIcon}/static/button1.png`,
+			icon: `file:///${dirIcon}/static/icons/button1.png`,
 			index: 1,
 			color: "230",
 			blocks:['button']
 		},
 		{
 			name: 'Thermistor',
-			icon: `file:///${dirIcon}/static/icon_sensor.png`,
+			icon: `file:///${dirIcon}/static/icons/icon_sensor.png`,
 			index: 2,
 			color: "230",
 			blocks:['setup_thermitorpin','thermistorCelsius', 'thermistorFahrenheit']
 		},
 		{
 			name: 'I2C',
-			icon: `file:///${dirIcon}/static/I2C-Logo.png`,
+			icon: `file:///${dirIcon}/static/icons/I2C-Logo.png`,
 			index: 3,
 			color: "230",
 			blocks:['setup_i2c','scan_i2c','show_i2c','scanlistdevice_i2c']
 		},
-		{
-			name: 'SPI(SD card)',
-			icon: `file:///${dirIcon}/static/spisdcard.png`,
-			index: 4,
-			color: "230",
-			blocks:['spi__sdcard','create_file','read_file']
-		},
-		
+		spi_sdcard,
 		{
 			name: 'RGB',
-			icon: `file:///${dirIcon}/static/rgb-icon.png`,
+			icon: `file:///${dirIcon}/static/icons/rgb-icon.png`,
 			index: 5,
 			color: "230",
 			blocks:[
