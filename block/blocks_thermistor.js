@@ -1,3 +1,4 @@
+const dirIcon = Vue.prototype.$global.board.board_info.dir;
 module.exports = function (Blockly) {
 	'use strict';
 	
@@ -18,7 +19,7 @@ module.exports = function (Blockly) {
 		init: function () {
 			this.appendDummyInput()
 				.setAlign(Blockly.ALIGN_CENTRE)
-				.appendField(new Blockly.FieldImage("https://5.imimg.com/data5/VN/EE/MY-20514451/axial-ntc-thermistor-500x500.jpg", 25, 20, { alt: "", flipRtl: "FALSE" }))
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/axial-ntc-thermistor.png`, 25, 25, { alt: "", flipRtl: "FALSE" }))
 				.appendField("Thermitor Read : Celsius");
 			this.setOutput(true, "Number");
 			this.setColour(0);
@@ -30,7 +31,7 @@ module.exports = function (Blockly) {
 		init: function () {
 			this.appendDummyInput()
 				.setAlign(Blockly.ALIGN_CENTRE)
-				.appendField(new Blockly.FieldImage("https://5.imimg.com/data5/VN/EE/MY-20514451/axial-ntc-thermistor-500x500.jpg", 25, 20, { alt: "", flipRtl: "FALSE" }))
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/axial-ntc-thermistor.png`, 25, 25, { alt: "", flipRtl: "FALSE" }))
 				.appendField("Thermitor Read : Fahrenheit");
 			this.setOutput(true, "Number");
 			this.setColour(0);

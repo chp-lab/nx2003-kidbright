@@ -1,6 +1,6 @@
 const dirIcon = Vue.prototype.$global.board.board_info.dir;
 let spi_sdcard = require("./menu/config.group.spi_sdcard");
-// let display = require("./menu/config.group.display");
+let buzzer = require("./menu/config.group.buzzer");
 module.exports = {
 	blocks : [
 		{
@@ -13,8 +13,8 @@ module.exports = {
 		{
             name : 'Display',
 			color : '230',
+			index: 1,
 			icon: `file:///${dirIcon}/static/icons/pngegg.png`,
-            // icon : '/static/icons/icons8_picture_96px_1.png',
             blocks : [
 			    {
 					xml:
@@ -215,7 +215,8 @@ module.exports = {
 				"i2c128x64_display_height",
 				"basic_string"
             ]
-        },
+		},
+		buzzer,
 		{
 			name: 'Button',
 			icon: `file:///${dirIcon}/static/icons/button1.png`,
