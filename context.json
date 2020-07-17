@@ -1,4 +1,0 @@
-{
-    "cflags": ["-I\"{board}/include\"","-DESP_PLATFORM"],
-    "libflags" : []
-}
