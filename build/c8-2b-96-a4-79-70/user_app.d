@@ -186,5 +186,4 @@ C:\Users\yewuy\AppData\Local\Programs\kbide\boards\nx2003-wrover\build\c8-2b-96-
  C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/WiFiAP.h \
  C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/WebServer.h \
  C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/HTTP_Method.h \
- C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/detail/RequestHandler.h \
- C:\Users\yewuy\AppData\Local\Programs\kbide\boards\nx2003-wrover\include/NX2003Thermistor.h
+ C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/detail/RequestHandler.h

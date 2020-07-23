@@ -1,6 +1,7 @@
 const app = require('electron').remote; 
 const nativeImage = require('electron').nativeImage;
 const dialog = app.dialog;
+const dirIcon = Vue.prototype.$global.board.board_info.dir;
 
 function floyd_steinberg(imageData,w) {
   var imageDataLength = imageData.length;
@@ -37,7 +38,7 @@ module.exports = function(Blockly){
   Blockly.Blocks['i2c128x64_display_begin'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/DHT11.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .appendField("begin address")
         .appendField(new Blockly.FieldTextInput("0x3c"), "ADDR");

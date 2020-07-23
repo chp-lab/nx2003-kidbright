@@ -1,6 +1,9 @@
 const dirIcon = Vue.prototype.$global.board.board_info.dir;
 let spi_sdcard = require("./menu/config.group.spi_sdcard");
-let buzzer = require("./menu/config.group.buzzer");
+let music = require("./menu/config.group.music");
+let wifi = require("./menu/config.group.wifi");
+let dht = require("./menu/config,group.dht");
+
 module.exports = {
 	blocks : [
 		{
@@ -14,7 +17,7 @@ module.exports = {
             name : 'Display',
 			color : '230',
 			index: 1,
-			icon: `file:///${dirIcon}/static/icons/pngegg.png`,
+			icon: `file:///${dirIcon}/static/icons/display.png`,
             blocks : [
 			    {
 					xml:
@@ -216,10 +219,12 @@ module.exports = {
 				"basic_string"
             ]
 		},
-		buzzer,
+		music,
+		wifi,
+		dht,
 		{
 			name: 'Button',
-			icon: `file:///${dirIcon}/static/icons/button1.png`,
+			icon: `file:///${dirIcon}/static/icons/button.png`,
 			index: 2,
 			color: "230",
 			blocks:['button']

@@ -186,7 +186,4 @@ C:\Users\yewuy\AppData\Local\Programs\kbide\boards\nx2003-wrover\build\b4-e6-2d-
  C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/WiFiAP.h \
  C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/WebServer.h \
  C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/HTTP_Method.h \
- C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/detail/RequestHandler.h \
- C:\Users\yewuy\AppData\Local\Programs\kbide\boards\nx2003-wrover\include/NX2003I2C.h \
- C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/Wire.h \
- C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\include/esp32-hal.h
+ C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/detail/RequestHandler.h
