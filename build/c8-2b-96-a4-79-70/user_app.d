@@ -186,4 +186,11 @@ C:\Users\yewuy\AppData\Local\Programs\kbide\boards\nx2003-wrover\build\c8-2b-96-
  C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/WiFiAP.h \
  C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/WebServer.h \
  C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/HTTP_Method.h \
- C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/detail/RequestHandler.h
+ C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/detail/RequestHandler.h \
+ C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\libraries_include/Wire.h \
+ C:\Users\yewuy\AppData\Local\Programs\kbide\platforms\arduino-esp32\lib\include/esp32-hal.h \
+ C:\Users\yewuy\AppData\Local\Programs\kbide\boards\nx2003-wrover\include/SSD1306Wire.h \
+ C:\Users\yewuy\AppData\Local\Programs\kbide\boards\nx2003-wrover\include/OLEDDisplay.h \
+ C:\Users\yewuy\AppData\Local\Programs\kbide\boards\nx2003-wrover\include/OLEDDisplayFonts.h \
+ C:\Users\yewuy\AppData\Local\Programs\kbide\boards\nx2003-wrover\include/images.h \
+ C:\Users\yewuy\AppData\Local\Programs\kbide\boards\nx2003-wrover\include/fontovi.h

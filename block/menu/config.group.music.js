@@ -7,7 +7,7 @@ module.exports = {
   name: "Music",
   index: 3,
   color: "230",
-  icon: `file:///${dirIcon}/static/icons/speaker.png`,
+  icon: `file:///${dirIcon}/static/icons/music.png`,
   blocks: [
     {
       xml: `<sep gap="28"></sep><label text="Block setup NX2003 MUSIC" web-class="headline"></label>`

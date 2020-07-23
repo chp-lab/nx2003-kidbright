@@ -7,6 +7,13 @@ let dht = require("./menu/config,group.dht");
 module.exports = {
 	blocks : [
 		{
+			name: 'Game',
+			icon: `file:///${dirIcon}/static/icons/game.png`,
+			index: 0,
+			color: "230",
+			blocks:['block_flappy_bird']
+		},
+		{
 			name: 'LED Blink',
 			icon: `file:///${dirIcon}/static/icons/led-icon.png`,
 			index: 0,

@@ -6,6 +6,7 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['setup_thermitorpin'] = {
 		init: function () {
 			this.appendDummyInput()
+			    .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/axial-ntc-thermistor.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField("set up THERMISTOR PIN ")
 				.appendField(new Blockly.FieldTextInput("39"), "THERMISTOR_PIN");
 			this.setPreviousStatement(true, null);
@@ -19,7 +20,7 @@ module.exports = function (Blockly) {
 		init: function () {
 			this.appendDummyInput()
 				.setAlign(Blockly.ALIGN_CENTRE)
-				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/axial-ntc-thermistor.png`, 25, 25, { alt: "", flipRtl: "FALSE" }))
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/axial-ntc-thermistor.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField("Thermitor Read : Celsius");
 			this.setOutput(true, "Number");
 			this.setColour(0);
@@ -31,7 +32,7 @@ module.exports = function (Blockly) {
 		init: function () {
 			this.appendDummyInput()
 				.setAlign(Blockly.ALIGN_CENTRE)
-				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/axial-ntc-thermistor.png`, 25, 25, { alt: "", flipRtl: "FALSE" }))
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/axial-ntc-thermistor.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField("Thermitor Read : Fahrenheit");
 			this.setOutput(true, "Number");
 			this.setColour(0);

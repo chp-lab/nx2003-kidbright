@@ -1,9 +1,13 @@
-module.exports = function(Blockly) {
-  "use strict";
-  // >>>>>>>>>>>>>>>LED Blink>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
+
+const dirIcon = Vue.prototype.$global.board.board_info.dir;
+
+module.exports = function (Blockly) {
+	"use strict";
+	// >>>>>>>>>>>>>>>LED Blink>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
 	Blockly.Blocks['led_blink'] = {
 		init: function () {
 			this.appendDummyInput()
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/led-icon.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField("LED Blink with delay ")
 				.appendField(new Blockly.FieldTextInput("time"), "delay")
 				.appendField(" second");
@@ -15,5 +19,5 @@ module.exports = function(Blockly) {
 			this.setHelpUrl("");
 		}
 	};
-// ######################################################################
+	// ######################################################################
 };

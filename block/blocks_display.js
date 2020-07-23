@@ -1,13 +1,13 @@
-const app = require('electron').remote; 
+const app = require('electron').remote;
 const nativeImage = require('electron').nativeImage;
 const dialog = app.dialog;
 const dirIcon = Vue.prototype.$global.board.board_info.dir;
 
-function floyd_steinberg(imageData,w) {
+function floyd_steinberg(imageData, w) {
   var imageDataLength = imageData.length;
   var lumR = [],
-      lumG = [],
-      lumB = [];
+    lumG = [],
+    lumB = [];
   var newPixel, err;
   for (var i = 0; i < 256; i++) {
     lumR[i] = i * 0.299;
@@ -16,29 +16,29 @@ function floyd_steinberg(imageData,w) {
   }
   // Greyscale luminance (sets r pixels to luminance of rgb)
   for (var i = 0; i <= imageDataLength; i += 4) {
-    imageData[i] = Math.floor(lumR[imageData[i]] + lumG[imageData[i+1]] + lumB[imageData[i+2]]);
+    imageData[i] = Math.floor(lumR[imageData[i]] + lumG[imageData[i + 1]] + lumB[imageData[i + 2]]);
   }
   for (var currentPixel = 0; currentPixel <= imageDataLength; currentPixel += 4) {
     // threshold for determining current pixel's conversion to a black or white pixel
     newPixel = imageData[currentPixel] < 150 ? 0 : 255;
     err = Math.floor((imageData[currentPixel] - newPixel) / 23);
-    imageData[currentPixel + 0 * 1 - 0 ] = newPixel;
-    imageData[currentPixel + 4 * 1 - 0 ] += err * 7;
-    imageData[currentPixel + 4 * w - 4 ] += err * 3;
-    imageData[currentPixel + 4 * w - 0 ] += err * 5;
-    imageData[currentPixel + 4 * w + 4 ] += err * 1;
+    imageData[currentPixel + 0 * 1 - 0] = newPixel;
+    imageData[currentPixel + 4 * 1 - 0] += err * 7;
+    imageData[currentPixel + 4 * w - 4] += err * 3;
+    imageData[currentPixel + 4 * w - 0] += err * 5;
+    imageData[currentPixel + 4 * w + 4] += err * 1;
     // Set g and b values equal to r (effectively greyscales the image fully)
     imageData[currentPixel + 1] = imageData[currentPixel + 2] = imageData[currentPixel];
   }
   return imageData;
 }
 
-module.exports = function(Blockly){
+module.exports = function (Blockly) {
   'use strict';
   Blockly.Blocks['i2c128x64_display_begin'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/DHT11.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .appendField("begin address")
         .appendField(new Blockly.FieldTextInput("0x3c"), "ADDR");
@@ -60,11 +60,11 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_create_image"] = {
     init: function () {
       this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField("create image from PNG file");
       this.appendDummyInput()
         .appendField(new Blockly.FieldImage(
@@ -107,7 +107,7 @@ module.exports = function(Blockly){
           },
           true));
       this.appendDummyInput().appendField("image size 128 x 64");
-  
+
       this.setOutput(true, "std::vector<uint8_t>");
       this.setColour(230);
       this.setTooltip(
@@ -115,11 +115,11 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_display_image"] = {
     init: function () {
       this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance");
       this.appendValueInput("img")
         .setCheck("std::vector<uint8_t>")
@@ -144,12 +144,12 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_display_print"] = {
     init: function () {
       this.appendValueInput("text")
         .setCheck("String")
-        .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .appendField("display text");
       this.appendValueInput("x")
@@ -176,11 +176,11 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_display_display"] = {
     init: function () {
       this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .appendField("display");
       this.setPreviousStatement(true, null);
@@ -190,11 +190,11 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_display_clear"] = {
     init: function () {
       this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .appendField("clear display");
       this.setPreviousStatement(true, null);
@@ -204,11 +204,11 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_display_draw_line"] = {
     init: function () {
       this.appendValueInput("x0")
-      .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .setCheck("Number")
         .appendField("draw line from (X");
@@ -231,11 +231,11 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_display_draw_rect"] = {
     init: function () {
       this.appendValueInput("x")
-      .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .setCheck("Number")
         .appendField("draw rectangle at (X");
@@ -259,11 +259,11 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_display_draw_circle"] = {
     init: function () {
       this.appendValueInput("x")
-      .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .setCheck("Number")
         .appendField("draw circle at (X");
@@ -284,11 +284,11 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_display_draw_progress_bar"] = {
     init: function () {
       this.appendValueInput("x")
-      .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .setCheck("Number")
         .appendField("draw progress bar at (X");
@@ -312,11 +312,11 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_display_draw_pixel"] = {
     init: function () {
       this.appendValueInput("x")
-      .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .setCheck("Number")
         .appendField("set pixel (X");
@@ -334,12 +334,12 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
-  
+
+
   Blockly.Blocks["i2c128x64_display_width"] = {
     init: function () {
       this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .appendField("get screen width");
       this.setOutput(true, "Number");
@@ -348,11 +348,11 @@ module.exports = function(Blockly){
       this.setHelpUrl("");
     }
   };
-  
+
   Blockly.Blocks["i2c128x64_display_height"] = {
     init: function () {
       this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("https://i.ya-webdesign.com/images/website-design-icon-png-3.png", 25, 25, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icon_display.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldVariable("oled1", null, ["Plugin.OLED"], ["Plugin.OLED"]), "instance")
         .appendField("get screen height");
       this.setOutput(true, "Number");

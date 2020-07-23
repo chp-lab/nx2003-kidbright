@@ -11,6 +11,7 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['setup_nx2003_Music'] = {
 		init: function () {
 			this.appendDummyInput()
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/music.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField("Using setup NX2003 Music");
 			this.setPreviousStatement(true, null);
 			this.setNextStatement(true, null);
@@ -22,6 +23,7 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['setup_tempo'] = {
 		init: function () {
 			this.appendDummyInput()
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/music.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField("Set up Tempo : ")
 				.appendField(new Blockly.FieldNumber(60, 0, 255), "value_tempo");
 			this.setPreviousStatement(true, null);
@@ -66,6 +68,7 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['music_play_notes'] = {
 		init: function () {
 			this.appendValueInput("note")
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/music.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.setCheck("std::vector<int>")
 				.appendField("play music notes");
 
@@ -92,6 +95,7 @@ module.exports = function (Blockly) {
 				return e;
 			};
 			this.appendDummyInput()
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/music.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField(new Blockly.FieldImage("/static/icons/icons8_move_24px.png", 15, 15, "move"))
 				.appendField(f, "notes");
 			this.setInputsInline(true);
@@ -196,6 +200,7 @@ module.exports = function (Blockly) {
 	Blockly.Blocks["music_note"] = {
 		init: function () {
 			this.appendDummyInput()
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/music.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField(Blockly.Msg.MUSIC_NOTE_TITLE)
 				.appendField(new Blockly.FieldDropdown([
 					[Blockly.Msg.MUSIC_NOTE_C7, "2093"],
@@ -938,7 +943,7 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['music_ice_cream'] = {
 		init: function () {
 			this.appendDummyInput()
-				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icecream.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/music.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField("Play Music :  ice cream");
 			this.appendDummyInput()
 				.appendField("         Note: B4,D5,A4,E5,G5,C5,E5,F#5,D5,E5,F#5,A5,G5");
@@ -952,7 +957,7 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['music_cat'] = {
 		init: function () {
 			this.appendDummyInput()
-				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icecream.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/music.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField("Play Music :  noo malee");
 			this.appendDummyInput()
 				.appendField("         Note: E5,D5,C5,D5,E5,E5,E5,D5,D5,D5,E5,G5,G5,E5,D5,C5,D5,E5,E5");
@@ -966,7 +971,7 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['music_conan'] = {
 		init: function () {
 			this.appendDummyInput()
-				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icecream.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/music.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField("Play Music :  conan");
 			this.appendDummyInput()
 				.appendField("         Note : G#5,G5,F5,C6,G#5,F5,G5,C#6,C6,Bb5,G#5,Bb5,G#5,Bb5,C6,G#5,G5,F5,Bb5,G#5,G5,F5,G5,G#5,C6,G#5,Bb5,F6,Eb6,Bb5,C6");
@@ -980,7 +985,7 @@ module.exports = function (Blockly) {
 	Blockly.Blocks['music_mario'] = {
 		init: function () {
 			this.appendDummyInput()
-				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/icecream.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
+				.appendField(new Blockly.FieldImage(`file:///${dirIcon}/static/icons/music.png`, 25, 25, { alt: "*", flipRtl: "FALSE" }))
 				.appendField("Play Music :  mario");
 			this.appendDummyInput()
 				.appendField("         Note : E6,E6,0,E6,0,C7,E6,0,G6,0,G6,0,C7,0,G6,E6,0,A6,B6,2,Bb6,A6,0,G6,E6,G6,A6,0,F6,G6,0,E6,0,C7,D6,B6,0,C7,0,G6,0,E6,0,A6,0,B6,Bb6,A6,0,G6,E6,G6,A6,0,F6,G6,0,E6,0,C7,D6,B6,0");
