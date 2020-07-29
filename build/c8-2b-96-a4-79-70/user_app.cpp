@@ -6,10 +6,10 @@
 
 
 #include <Wire.h>
-              #include "SSD1306Wire.h"
+            #include "SSD1306Wire.h"
 
-              #include "images.h"
-              #include "fontovi.h"
+            #include "images.h"
+            #include "fontovi.h"
 
 SSD1306Wire  display(0x3c, 4, 22);
 
@@ -53,7 +53,7 @@ void setup()
 
               display.flipScreenVertically();
               display.setFont(ArialMT_Plain_10);
-  
+  Serial.begin(115200);
 }
 void loop()
 {
@@ -61,9 +61,11 @@ void loop()
           if(igra==0)
           {
            display.setFont(ArialMT_Plain_16);
-           display.drawString(0,4,"Flappy ");
-          display.drawXbm(0, 0, 128, 64, pozadina);
-          display.drawXbm(20, 32, 14, 9, ptica);
+           display.drawString(0,4,"Let go Squid !!");
+           display.drawXbm(0, 0, 128, 64, pozadina);
+           display.drawXbm(16, 28, 7, 12, ptica);
+           display.drawXbm(26, 24, 7, 12, ptica);
+           display.drawXbm(36, 28, 7, 12, ptica);
           display.setFont(ArialMT_Plain_10);
           display.drawString(0,44,"press to start");
            if(digitalRead(SWITHCH)==1)
@@ -86,13 +88,13 @@ void loop()
            }else{stis=0;}
            for(int j=0;j<4;j++){
               display.setColor(WHITE);
-           display.fillRect(zidx[j],0,6,64);
+           display.fillRect(zidx[j],0,4,64);
             display.setColor(BLACK);
-             display.fillRect(zidx[j],prazan[j],6,sirinaProlaza);
+             display.fillRect(zidx[j],prazan[j],4,sirinaProlaza);
            }
          display.setColor(WHITE);
         //  display.fillCircle(fx, fy, 4); // igrac
-         display.drawXbm(fx, fy, 14, 9, ptica);
+         display.drawXbm(fx, fy, 7, 12, ptica);
            for(int j=0;j<4;j++)
            {
            zidx[j]=zidx[j]-0.01;

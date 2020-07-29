@@ -8,10 +8,10 @@ module.exports = {
 	blocks : [
 		{
 			name: 'Game',
-			icon: `file:///${dirIcon}/static/icons/game.png`,
+			icon: `file:///${dirIcon}/static/icons/game_icon.png`,
 			index: 0,
 			color: "230",
-			blocks:['block_flappy_bird']
+			blocks:['block_game_squid']
 		},
 		{
 			name: 'LED Blink',

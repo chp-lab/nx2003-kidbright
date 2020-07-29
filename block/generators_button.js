@@ -12,10 +12,7 @@ module.exports = function (Blockly) {
         #SETUP
 			BTN.init();		
 		#END
-			if(BTN.pressed())
-				{
-					Serial.println("Button pressed!");
-				}
+		    BTN.pressed()
 		`;
 		return [code, Blockly.JavaScript.ORDER_NONE];
     };

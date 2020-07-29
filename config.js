@@ -8,5 +8,5 @@ module.exports = {
     email : 'ch.ee.psu@outlook.com',
     git : 'https://github.com/chp-lab/nx2003-kidbright/',
     image : '/static/FRONT BOARD.png',
-    version : '1.1.1'
+    version : '1.1.3'
 };
